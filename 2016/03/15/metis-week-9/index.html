@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Week 8 and 9 at Metis Data Science - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="Week 8 and 9 at Metis Data Science" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Journey to Data Science
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2016/03/15/metis-week-9/" property="og:url">
+  
+  
+    <meta content="2016-03-15T07:00:00-04:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="/img/profile.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="metis" property="article:tag">
+    
+    <meta content="data-science" property="article:tag">
+    
+    <meta content="projects" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="Week 8 and 9 at Metis Data Science">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2016/03/15/metis-week-9/">
+  
+  
+    <meta name="twitter:description" content="Journey to Data Science
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/profile.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Week 8 and 9 at Metis Data Science</h1>
+        <div class="page-date"><span>Mar 15, 2016&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <!--javascript headers-->
+<script type="text/javascript" src="/assets/xw/d3.js"></script>
+
+<script src="/assets/xw/nv.d3.min.js"></script>
+
+<link href="/assets/xw/nv.d3.css" rel="stylesheet" />
+
+<style>
+  #chart svg {
+    height: 400px
+    }
+</style>
+
+<p>Another 2 weeks has passed swiftly at Metis. We worked on and presented our 4th
+project around natural laguage processing and unsupervised machine learning, and
+we learned the basics of distributed computing with Hadoop, MapReduce, Hive, and
+Spark. Here’s a summary of what I worked on and some of my thoughts:</p>
+
+<!--more-->
+
+<p>We have less than 3 weeks left at Metis and I’ll be working hard on my final
+project, so I won’t be posting as frequently on my blog. However, I do have a lot
+of cool projects and writeups that I’m eager to post here. So stay tuned.</p>
+
+<h1 id="project-4---unsupervised-machine-learning-with-natural-language-processing">Project 4 - Unsupervised Machine Learning with Natural Language Processing</h1>
+
+<p>Our fourth data science project at Metis involves using text data and natural
+language processing techniques. Again we’re free to find a topic that we’re
+interested in. I decided to explore a specific interest of mine: <strong>crossword
+puzzles</strong>. As crossword puzzles are quite indicative of current events, pop culture
+knowledge of its solvers, and change of the English language, I wanted to create
+a tool to explore how clues have evolved to describe a certain word.</p>
+
+<p>I’ll write up a more detailed post on the project, but here’s a sneak peek at
+one the visualization. I look at how the word <strong>Euro</strong> has been used over time:</p>
+
+<div id="chart">
+  <svg></svg>
+</div>
+<script type="text/javascript" src="/assets/xw/euro.js"></script>
+
+<p>Did you know that an euro is a
+<a href="https://en.wikipedia.org/wiki/Common_wallaroo" target="_blank">large red kangaroo</a>? Well before
+the mid 90s, that’s how the word Euro is sometimes used. Euro is also consistently
+used as a prefix to words to form <a href="https://en.wikipedia.org/wiki/Eurodollar" target="_blank">eurodollar</a>
+or <a href="https://en.wikipedia.org/wiki/Eurobonds" target="_blank">eurobonds</a>. The
+<a href="https://en.wikipedia.org/wiki/Euro" target="_blank">Euro</a> currency started
+gaining traction in the 90s, and we see a peak in its usage coinciding with the
+currency’s official adoption in 1999. It’s also interesting to see how the Euro
+currency gradually stops being <em>new</em> and becomes a <em>replacement</em> currency,
+perhaps a nostolgia for the <a href="https://en.wikipedia.org/wiki/Franc" target="_blank">franc</a> or the
+<a href="https://en.wikipedia.org/wiki/Deutsche_Mark" target="_blank">Mark</a>.</p>
+
+<p>All these clusters and “topics” were done through unsupervised machine
+learning with my intervention only in edit the wording of the topics. Cool huh?</p>
+
+<h1 id="final-metis-project">Final Metis Project</h1>
+
+<p>Currently, I plan to extend my crossword puzzle project to my final project and
+attempt to generate a themed crossword puzzle based on a chosen word or theme.
+And for my final presentation, I’d like to present a functional full stack web
+app. In the background, there will be some serious machine learning and
+algorithimic programming. I’m pretty excited!</p>
+
+<h1 id="other-tidbits">Other tidbits:</h1>
+
+<ul>
+  <li>Setting up web app on Heroku</li>
+  <li>Code review with instructors</li>
+  <li>Mock non-technical interviews, recorded, great feedback</li>
+  <li>Resume clinics</li>
+  <li>Pair programming</li>
+  <li>programming concepts</li>
+  <li>I’m learning JQuery, Javascript</li>
+  <li>and some front end: Node.js, Express.js. Looked at Ember.js</li>
+  <li>Advanced 2 challenges in foobar</li>
+  <li>But also reviewing a lot of programming concepts</li>
+  <li>nypd: alex chohlas</li>
+  <li>investigation on Google PageRank</li>
+</ul>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Week 8 and 9 at Metis Data Science&url=http://localhost:4000/2016/03/15/metis-week-9/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/03/15/metis-week-9/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/03/15/metis-week-9/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#metis" class="tag">&#35; metis</a>
+          
+            <a href="/projects/#data-science" class="tag">&#35; data-science</a>
+          
+            <a href="/projects/#projects" class="tag">&#35; projects</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

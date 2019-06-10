@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Investigation: Data Science in Insurance - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="Investigation: Data Science in Insurance" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Journey to Data Science
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2016/01/23/data-science-in-insurance/" property="og:url">
+  
+  
+    <meta content="2016-01-23T10:04:00-05:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="/img/profile.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="data-science" property="article:tag">
+    
+    <meta content="projects" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="Investigation: Data Science in Insurance">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2016/01/23/data-science-in-insurance/">
+  
+  
+    <meta name="twitter:description" content="Journey to Data Science
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/profile.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Investigation: Data Science in Insurance</h1>
+        <div class="page-date"><span>Jan 23, 2016&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>At Metis, investigations are a chance for students to present a topic in machine
+learning or data science more broadly. I looked into Natural Language Processing
+and offered a glimpse of my experience with data science in insurance.
+<!--more--></p>
+
+<p>For my first investigation, I presented some of my work experiences as a data
+science intern at an insurance company, and projects related to text mining and
+news analytics. In addition, I introduced to the class the basics of Natural
+Language Processing and Python’s powerful NLTK <a href="http://www.nltk.org" target="_blank">(Natural Language Toolkit)</a>
+package with a live demonstration.</p>
+
+<p>You can find the investigation files in my <a href="https://github.com/ozzieliu/metis-datascience/tree/master/Investigation" target="_blank">Github repo</a>.
+And in this first blog
+post, I will discuss some of the uses of data science that I’ve seen in Insurance.</p>
+
+<h2 id="data-science-in-insurance">Data Science in Insurance</h2>
+
+<p>Traditionally, insurance has always been about data and information. An insurer
+can purchase your risk because they have the data and tools to be able to assess
+and spread risks and charge an appropriate premium. There’s competition in this
+industry because there’s information asymmetry - if your company can assess risk
+better, you have a chance to attract less risky customers with better rates.
+In fact, there’s an entire established field of actuarial science to apply
+statistics to insurance and risk management.</p>
+
+<p>But how are insurers using data differently today? Here are some of my
+observations:</p>
+
+<ul>
+  <li>
+    <p><strong>Automobile Insurance</strong>: Your cars today are already recording a lot of data:
+your speed, acceleration, collision information. And with cellular connected
+cars, even your precise location. Now insurance companies like Progressive can
+tap into all that data with a OBD-II dongle, to track how much and how far you
+drive. Presumably to lower your premium.</p>
+  </li>
+  <li>
+    <p><strong>Health Insurance</strong>: There’s been tremendous growth in Health Informatics and
+its data, but I am particularly interested in how wearable activity trackers
+like Fitbits are providing additional data points to health insurers about our
+daily habits.</p>
+
+    <p>I’ve heard anecdotally of an employer that lowered all employee health
+premiums, but requiring everyone to wear an activity monitor. If your daily
+step is under a certain threshold, then your premiums would rise. This
+resulted in employees shaking their Fitbits while sitting at a desk to get
+their daily required steps in.</p>
+  </li>
+  <li>
+    <p><strong>Life Insurance</strong>: Probably the original commercial applicators of data, they
+go beyond traditional sources and life/death tables now. New sources of
+information such as social media, web analytics, and marketing research can
+all contribute to building a better picture of the insuree.</p>
+  </li>
+</ul>
+
+<p>I used to think that insurance was a slow moving industry in terms of technology.
+So I was pleasantly surprised to receive a call last spring about an internship
+opportunity in a fast growing data science department. The company dealt mainly
+with commercial liability, and here are some of the areas:</p>
+
+<ul>
+  <li>
+    <p><strong>Flood &amp; Property Insurance</strong>: I’ve seen analysis done here that goes beyond FEMA
+flood maps. Insurers are analyzing geographical surveys of individual
+properties to see where they lie in relation to the surrounding area. In other
+words, if your building’s in a “hole”, you may be more at risk of being flooded.</p>
+  </li>
+  <li>
+    <p><strong>Workers Compensation</strong>: Fraud detection and claims correction are big here. Now
+claim reports, doctor notes, and even social media (photos of jetskiing when
+your arm was reportedly broken) are digitalized and analyzed for discrepancies.</p>
+  </li>
+  <li>
+    <p><strong>Cybersecurity</strong>: This is a rather new insurance product, but there are a lot of
+work done to try to measure the cost of a cyber breach. All this is modeled
+from data that are made available.</p>
+  </li>
+  <li>
+    <p><strong>Director and Officer Insurance</strong>: This pays if a company’s officers are sued,
+and can be split into 2 categories</p>
+    <ul>
+      <li><strong>Security Class Action</strong>: When stockholders and investors are unhappy with the
+officers’ actions and causes a drop in stock prices, they may sue. Predictive
+analytics can track large drops in stock prices, unusually high
+volumes of transactions, or short interest, so that an insurer will not
+be surprised by a claim.</li>
+      <li><strong>Non-SCA Claims</strong>: These lawsuits can come from employees for workplace misconduct,
+customers for injury, regulators for wrongdoings, lenders for
+unpaid debts, or even competitors for unfair trade practices.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="predictive-analytics">Predictive Analytics</h2>
+<p>Starting with Non-SCA claims, can we use news data to predict an upcoming claim?
+Makes sense right? If news about a certain company indicates some shady business,
+there could be a suit against the officers soon. We can search news about the
+company for keywords like: regulators, investigation, complaints, lawsuit, fraud,
+recall, or injury…</p>
+
+<p>Ultimately, if underwriters have a reliable source of news articles and sentiment
+about a potential client, it gives them a better picture of the client’s risk
+profile.</p>
+
+<p>This is complicated for small-medium companies since they’re not likely to be
+in the news much. But for large well-known companies, it’s also tough to find
+relevant news articles apart from the others!</p>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Investigation: Data Science in Insurance&url=http://localhost:4000/2016/01/23/data-science-in-insurance/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/01/23/data-science-in-insurance/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/01/23/data-science-in-insurance/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#data-science" class="tag">&#35; data-science</a>
+          
+            <a href="/projects/#projects" class="tag">&#35; projects</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

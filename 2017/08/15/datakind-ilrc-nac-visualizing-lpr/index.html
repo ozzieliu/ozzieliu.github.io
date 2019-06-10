@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Mapping Legal Permanent Residents with DataKind and ILRC - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="Mapping Legal Permanent Residents with DataKind and ILRC" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Pro bono project with the New Americans Campaign to map and visualize demographics of immigrant populations" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2017/08/15/datakind-ilrc-nac-visualizing-lpr/" property="og:url">
+  
+  
+    <meta content="2017-08-15T17:01:00-04:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/nac-background.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="data-science" property="article:tag">
+    
+    <meta content="project" property="article:tag">
+    
+    <meta content="visualization" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="Pro bono project with the New Americans Campaign to map and visualize demographics of immigrant populations">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="Mapping Legal Permanent Residents with DataKind and ILRC">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2017/08/15/datakind-ilrc-nac-visualizing-lpr/">
+  
+  
+    <meta name="twitter:description" content="Pro bono project with the New Americans Campaign to map and visualize demographics of immigrant populations">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/nac-background.png">
+  
+
+	<meta name="description" content="Pro bono project with the New Americans Campaign to map and visualize demographics of immigrant populations">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/nac-background.png alt="Mapping Legal Permanent Residents with DataKind and ILRC">
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Mapping Legal Permanent Residents with DataKind and ILRC</h1>
+        <div class="page-date"><span>Aug 15, 2017&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>I recently volunteered with <a href="http://www.datakind.org" target="_blank">DataKind</a> and had the chance to lead a team of fellow volunteer data scientists on a six-month long pro-bono project for the
+<a href="https://www.ilrc.org/" target="_blank">Immigrant Legal Resource Center’s (ILRC)</a>
+<a href="http://newamericanscampaign.org/" target="_blank">New Americans Campaign</a> to analyze and visualize the demographics and geography of lawful permanent residents eligible for naturalization<!--more-->, allowing Campaign partners to be more effective in their outreach and naturalization work.</p>
+
+<h1 id="background">Background</h1>
+
+<h2 id="my-motivation">My Motivation</h2>
+
+<p>I’m always interested in using my data science skills to make a difference in the community around me. So when I heard about <a href="http://www.datakind.org" target="_blank">DataKind’s</a> mission to harness the power of data with impactful projects to solve social and humanitarian problems, I knew I wanted to be part of it! In the fall of 2016, I had the opportunity to work on a project with the ILRC to help immigrant communities pursuing U.S. citizenship receive legal assistance to aid in the process. As a second generation immigrant, this topic is near and dear to my heart. I have family members that have been long time green card holders but never took the step in applying for citizenship, which means  they are missing out on possible civic engagement and additional benefits. Moreover, the new administration’s stance against immigrant groups has made this work even more urgent.</p>
+
+<h2 id="the-partners-ilrc-and-the-new-americans-campaign">The Partners: ILRC and the New Americans Campaign</h2>
+
+<p>The <a href="https://www.ilrc.org/" target="_blank">Immigrant Legal Resource Center (ILRC)</a> works with immigrants, community organizations, legal professionals, law enforcement, and policy makers to build a democratic society that values diversity and the rights of all people. The ILRC’s mission is to protect and defend the fundamental rights of immigrant families and communities. Led by the ILRC, the New Americans Campaign is a diverse nonpartisan national network of respected immigration organizations, legal services providers, faith-based organizations, immigrant rights groups, foundations and community leaders. The Campaign transforms the way aspiring citizens navigate the path to becoming new Americans. It is committed to connecting lawful permanent residents (LPRs) to trusted legal assistance and critical information that simplifies the naturalization process.</p>
+
+<h1 id="the-goal">The Goal</h1>
+
+<p>The ILRC wanted to be able to visualize the geographic and demographic makeup of LPRs that are eligible for naturalization so that New Americans Campaign partners could identify those that might require the Campaign’s assistance.</p>
+
+<h2 id="the-data">The Data</h2>
+
+<p>There is a good amount of data around immigrants and LPRs in the U.S. including sources such as:</p>
+
+<ul>
+  <li><a href="https://www.census.gov/topics/population/foreign-born.html" target="_blank">US Census Bureau</a></li>
+  <li><a href="https://www.census.gov/data/developers/data-sets/acs-migration-flows.html" target="_blank">American Community Survey</a></li>
+  <li><a href="https://www.uscis.gov/tools/reports-studies/immigration-forms-data" target="_blank">US Citizenship and Immigration Services</a></li>
+  <li><a href="https://www.dhs.gov/immigration-statistics" target="_blank">Homeland Security</a></li>
+</ul>
+
+<p>There are also several research organizations who work extensively with this immigrant population, and their work was tremendously helpful to our project. These partners include:</p>
+
+<ul>
+  <li><a href="http://cmsny.org/naturalization-by-puma/" target="_blank">Center for Migration Studies</a></li>
+  <li><a href="https://dornsife.usc.edu/csii/eligible-to-naturalize-map/" target="_blank">USC’s Center of Immigrant Integration</a></li>
+</ul>
+
+<p>Although much of the data around immigrants and LPRs is public and available to the ILRC and its partners, it is not easy to navigate the many disparate websites or download large spreadsheets of numbers. We wanted to help make this information more accessible to the organizations that are serving this immigrant community.</p>
+
+<p>Our team leveraged the excellent research that has already been done by CMS and CSII, which estimates the demographic and characteristics of immigrant populations at a detailed geographic level using <a href="https://www.census.gov/geo/reference/puma.html" target="_blank">PUMA</a>. We then compared this with the New Americans Campaign’s internal data to gauge the effectiveness of past outreach and to find new opportunities for local partners.</p>
+
+<h1 id="visualizing-lprs">Visualizing LPRs</h1>
+
+<p>After cleaning and wrangling the data, we started the visualization process. We wanted to develop an easy-to-use map that would show the appropriate characteristics of lawful permanent residents in corresponding PUMA area. Once we converted our data with PUMA’s shape files into a GeoJSON, we were able to create the visualization using D3.js.</p>
+
+<p><img src="/assets/img/nac-d3.png" alt="d3" />
+<em>Initial visualization of demographic by PUMA using D3.js</em></p>
+
+<p>Next, we attempted to add functionality and usability with off-the-shelf solution
+such as CartoDB:</p>
+
+<iframe width="100%" height="520" frameborder="0" src="https://ozzieliu.carto.com/builder/63dab8aa-e450-11e6-aa96-0ecd1babdde5/embed" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""> </iframe>
+<p><span class="caption">Interactive map of Spanish speakers and education levels
+using CartoDB</span></p>
+
+<p>We extensively tested tools such as CARTO, Mapbox, and Tableau that generated great looking visualizations, but we were concerned about the maintenance cost to the partner and the limitation of free tier levels that require opening up the Campaign’s internal data to the public. With help from DataKind’s in-house team of data scientists, we were able to develop a fully functional web app that uses Leaflet.js to serve as an interactive map that looks great and is flexible.</p>
+
+<p><img src="/assets/img/nac-final.png" alt="leaflet" />
+<em>Final prototype of the tool showing LPRs with Bachelor degree and higher in the
+NYC metro area</em></p>
+
+<p>Above is the final version of the app that we provided to the ILRC and New Americans Campaign partners. The left hand side is an interactive map that shows the raw number of LPRs given a selected characteristic by PUMA areas. On the right is a detailed view of each characteristic of the selected areas.</p>
+
+<h1 id="wrapping-up">Wrapping Up</h1>
+
+<p>After the project was completed, I had the chance to join Campaign partners in Chicago for the national New Americans Campaign Conference, where I led three workshops to unveil and demo the tool we had developed to all the attendees. I encouraged everyone to get out their laptops and smartphones, and actually play with the map as I presented the features. We then discussed the ways this tool could potentially help Campaign partners be more effective.</p>
+
+<p><img src="/assets/img/nac-presentation.jpg" alt="presentation" />
+<em>Me leading a live demo of the tool at the 2017 New Americans Campaign Conference in Chicago</em></p>
+
+<h1 id="potential-impact">Potential Impact</h1>
+
+<p>The feedback from the partners after the workshops was overwhelmingly positive (I even got some hugs). For some, this was the first time that the data was presented in a way that they could both understand and immediately use.</p>
+
+<p>Together we brainstormed some of the ways that this tool could help the partners:</p>
+
+<ul>
+  <li>Now that areas where certain demographics and characteristics were once unclear, were now apparent, more targeted and   effective outreach could be planned. One partner in Florida had planned to make a 6-hour roundtrip drive, twice a week, to be able to reach out to a specific immigrant group in the area. After using the map at the workshop, he discovered that a population with the same demographics he wanted to reach out to existed just 30 minutes away from his office.</li>
+  <li>Partners could use this tool to better prepare for offsite events or office visits, target outreach and plan necessary resources. For example:
+    <ul>
+      <li>Partners would be able to know in advance if they are serving an area where there is not a high-level of fluency in English, so that they could have translators on site.</li>
+      <li>Partners could identify LPRs that are younger and more computer savvy, and introduce them to <a href="https://www.citizenshipworks.org/" target="_blank">Citizenshipworks</a>, a “TurboTax” like program that can expedite the naturalization application form-filling process.</li>
+      <li>Partners could find LPRs that have lower income, as they may qualify for a fee-waiver.</li>
+      <li>Partners could develop more strategic planning to expand to new areas and seek funding.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>It’s been a wonderful experience for our DataCorps team to work with the ILRC and I am very excited to see how the New Americans Campaign partners will use our tool to advance their work!</p>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Mapping Legal Permanent Residents with DataKind and ILRC&url=http://localhost:4000/2017/08/15/datakind-ilrc-nac-visualizing-lpr/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2017/08/15/datakind-ilrc-nac-visualizing-lpr/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2017/08/15/datakind-ilrc-nac-visualizing-lpr/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#data-science" class="tag">&#35; data-science</a>
+          
+            <a href="/projects/#project" class="tag">&#35; project</a>
+          
+            <a href="/projects/#visualization" class="tag">&#35; visualization</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

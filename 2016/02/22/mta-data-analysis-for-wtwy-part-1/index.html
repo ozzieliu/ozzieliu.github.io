@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Optimal Street Team Placement for WomenTechWomenYes - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="Optimal Street Team Placement for WomenTechWomenYes" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Journey to Data Science
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2016/02/22/mta-data-analysis-for-wtwy-part-1/" property="og:url">
+  
+  
+    <meta content="2016-02-22T15:18:00-05:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/subway.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="metis" property="article:tag">
+    
+    <meta content="data-science" property="article:tag">
+    
+    <meta content="projects" property="article:tag">
+    
+    <meta content="python" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="Optimal Street Team Placement for WomenTechWomenYes">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2016/02/22/mta-data-analysis-for-wtwy-part-1/">
+  
+  
+    <meta name="twitter:description" content="Journey to Data Science
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/subway.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/subway.png alt="Optimal Street Team Placement for WomenTechWomenYes">
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Optimal Street Team Placement for WomenTechWomenYes</h1>
+        <div class="page-date"><span>Feb 22, 2016&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>This is our first project at Metis. Assigned at the first day of class and due on
+the same Friday, we work in groups to help WomenTechWomenYes raise funds and
+promote awareness of women in technology. Here’s part 1 of my analysis.</p>
+
+<!--more-->
+
+<h1 id="question">Question</h1>
+
+<p>We received a project request from WomenTechWomenYes in the following email:</p>
+
+<blockquote>
+  <p><strong>WomenTechWomenYes (WTWY)</strong> has an <strong>annual gala at the beginning of the summer each year</strong>. As we are new and inclusive organization, we try to do double duty with the gala both to fill our event space with individuals passionate about increasing the participation of women in technology, and to concurrently <strong>build awareness and reach</strong>.</p>
+
+  <p>To this end we place <strong>street teams at entrances to subway stations</strong>. The street teams collect email addresses and those who sign up are sent free tickets to our gala.</p>
+
+  <p>Where we’d like to solicit your engagement is to use MTA subway data, which as I’m sure you know is available freely from the city, to help us optimize the placement of our street teams, such that we can <strong>gather the most signatures</strong>, ideally from those who will attend the gala and contribute to our cause.</p>
+
+  <p>The ball is in your court now—do you think this is something that would be feasible for your group? From there we can explore what kind of an engagement would make sense for all of us.</p>
+</blockquote>
+
+<h1 id="approach">Approach</h1>
+
+<p>Our team approached WTWY’s project by analyzing 3 data sources
+to identify the best subway stations to place street teams.</p>
+
+<p>We recognize that our client wants to build awareness and reach of women in
+technology through a summer gala open to everyone that’s interested, but also
+those that can benefit their fundraising efforts. Of course, we want to target
+the most popular subway stations, but we also examine city demographic and tech
+company distributions for the areas that would be interested. Finally, we look
+at the best time of day to place the street teams. We weigh these 3 factors to
+recommend the best street team placements.</p>
+
+<p>As the gala takes place in early summer, we focus our analysis on a comparable
+time period in the late spring season: April - June.</p>
+
+<p>In summary, we look to:</p>
+
+<ul>
+  <li>Place street teams at the busiest subway entrances…</li>
+  <li>… in the areas with people who will be most interested in the event…</li>
+  <li>… at the most effective times of the day.</li>
+</ul>
+
+<h1 id="team-members">Team Members</h1>
+
+<ul>
+  <li>Andy Sherman-Ash - [<a href="http://shermanash.github.io/Tech_Signatures/" target="_blank">Blog</a>]</li>
+  <li>Dan Yawitz - [<a href="http://github.com/yawitzd" target="_blank">Github</a>]</li>
+  <li>Jamie Evers</li>
+</ul>
+
+<h1 id="data-sources">Data Sources</h1>
+
+<ul>
+  <li><a href="http://web.mta.info/developers/turnstile.html" target="_blank">MTA Turnstile Data</a></li>
+  <li><a href="http://www.census.gov/data.html" target="_blank">US Census Data</a></li>
+  <li><a href="https://www.census.gov/programs-surveys/acs/" target="_blank">American Community Survey</a></li>
+  <li><a href="https://philanthropy.com/interactives/how-america-gives#zip/10016" target="_blank">Giving Ratio from Philantrophy.com</a></li>
+  <li><a href="http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml" target="_blank">Business Types from Census</a></li>
+</ul>
+
+<h1 id="data-wrangling--preprocessing">Data Wrangling / Preprocessing</h1>
+
+<p>The MTA turnstile data is quite complex and not immediately useful.
+Here’s a snippet of the raw data obtained from the MTA:
+<img src="/assets/img/mta-raw.png" alt="raw" /></p>
+
+<p>There are detailed description of the turnstile file on the
+<a href="http://web.mta.info/developers/turnstile.html" target="_blank">MTA website</a>,
+but here’s a quick rundown of the fields I need:</p>
+
+<ul>
+  <li><strong>STATION</strong> is the name of the subway station</li>
+  <li><strong>C/A</strong> or Control Area is basically a “Fare Control Area”, a vestibule with
+a booth</li>
+  <li><strong>UNIT</strong> or remote unit is a bank of turnstiles in the control area.</li>
+  <li><strong>SCP</strong> is Subunit Channel Position or the unique identifier for the turnstile
+in that control area.</li>
+  <li><strong>ENTRIES</strong> and <strong>EXITS</strong> are the turnstile’s counter. It’s recorded 6 times a
+day in 4 hour blocks, and it’s a running cumulative total.</li>
+</ul>
+
+<p>One caveat: Different stations on different lines but on the same street may
+have the same station name, e.g. The station designation “23 ST” is used for 4
+unique stations: C/E, 1, F/M, and 6 line. They have different C/A and remote
+UNIT. As we’ll see later, this may affect our aggregation.</p>
+
+<p>Using the power of <strong>Pandas</strong> and <strong>Python</strong>, I transform the raw data into workable
+dataframes. The critical part here is to find the difference for each time frame
+to find the actual number of entries and exits. I also remove any anomalies in
+the count.</p>
+
+<p>For the complete code with reusable functions, see my Ipython
+Notebook on <strong><a href="https://github.com/ozzieliu/metis-datascience/tree/master/Projects/01-MTA-Project-Benson" target="_blank">Github</a></strong>.</p>
+
+<h1 id="mta-subway-turnstile-analysis">MTA Subway Turnstile Analysis</h1>
+
+<p>First, I just look at the subway data and see what kind of information I can
+gather.</p>
+
+<p>Here are 2 plots of entries and exits during the week ending April 4th 2015.
+This specific turnstile is at my local N/R subway stop here in Madison Square Park.
+The blue line indicate entries and green line is for exits. This is for one
+turnstile:
+<img src="/assets/img/mta-turnstile-1.png" alt="turnstile-1" />
+And this is for the entire station:
+<img src="/assets/img/mta-station-0.png" alt="station-total" /></p>
+
+<p>A few observations jump out here:</p>
+
+<ul>
+  <li>Weekend usage at this station is significantly lower. (Reported week starts
+with Saturday and Sunday)</li>
+  <li>There’s a spike in exits in the morning, while entries are higher later in the
+day. There are a lot of offices in this area, so it makes sense that people
+are taking the subway to work.</li>
+  <li>Morning exits averages about 6,000 people, but where are the additional
+4,000-6,000 people entering in the afternoon coming from? Maybe the plateau
+in exits might explain it; perhaps people are only visiting this area for a few
+hours in the PM?</li>
+</ul>
+
+<p>With some more grouping, I can make a cool looking chart of all the turnstiles
+at this station:
+<img src="/assets/img/mta-turnstile-2.png" alt="all-turnstile" /></p>
+
+<p>That was fun, but this graph is pretty busy. We do see that one turnstile in
+particular (01-03-02) is used much more than the others though. I wonder what
+the story here is…</p>
+
+<p>OK, back to business. It’s straight forward to find the busiest stations in the
+entire system during the same week:
+<img src="/assets/img/mta-station-1.png" alt="busiest-stations" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Top 10 Busiest Subway Stations - Week ending 4/4/2015
+Grouped only by STATION
+
+STATION             ENTRIES     EXITS      TOTAL
+34 ST-PENN STA    1,057,437   926,188  1,983,625
+42 ST-GRD CNTRL     881,720   781,065  1,662,785
+34 ST-HERALD SQ     737,810   675,999  1,413,809
+14 ST-UNION SQ      678,636   606,453  1,285,089
+86 ST               690,065   593,711  1,283,776
+42 ST-TIMES SQ      605,890   561,544  1,167,434
+42 ST-PA BUS TE     563,733   473,070  1,036,803
+125 ST              484,665   385,149    869,814
+FULTON ST           449,062   388,010    837,072
+CANAL ST            452,381   368,083    820,464
+</code></pre></div></div>
+
+<p>This makes a lot of sense. These are expectedly, the busiest stations in
+NYC. But wait! Is 86th Street really busier than 42nd St. Port Authority? And
+125th Street is in the top 10 too?</p>
+
+<p>I mentioned this before, but it turns out some stations share the same name even
+though they serve different lines and are geographically separate. I’ll have to
+group them differently now.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Busiest Subway Stations - Week Ending 4/4/2015
+Grouped by STATION and LINENAME
+
+STATION          LINENAME           TOTAL
+42 ST-GRD CNTRL  4567S          1,747,385
+34 ST-HERALD SQ  BDFMNQR        1,419,312
+42 ST-TIMES SQ   1237ACENQRS    1,046,048
+34 ST-PENN STA   ACE            1,021,613
+42 ST-PA BUS TE  ACENQRS1237      896,345
+14 ST-UNION SQ   LNQR456          815,698
+86 ST            456              754,797
+47-50 ST-ROCK    BDFM             739,774
+MAIN ST          7                648,390
+59 ST            456NQR           604,764
+59 ST-COLUMBUS   ABCD1            603,226
+34 ST-PENN STA   123ACE           573,880
+W 4 ST-WASH SQ   ABCDEFM          552,484
+</code></pre></div></div>
+
+<p>OK. Much better. Now what I’m really after is the daily average across the
+spring season. So I crunch 13 week worth of data in the spring of 2015 to obtain:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Top 10 Busiest Stations - Spring 2015 (4/4/15-6/27/15)
+                              AVERAGE WEEKLY
+STATION          LINENAME       RIDERSHIP
+42 ST-GRD CNTRL  4567S          1738601.0
+34 ST-HERALD SQ  BDFMNQR        1411616.0
+42 ST-TIMES SQ   1237ACENQRS    1008596.0
+34 ST-PENN STA   ACE             985054.1
+42 ST-PA BUS TE  ACENQRS1237     869653.9
+14 ST-UNION SQ   LNQR456         864844.1
+86 ST            456             776311.3
+47-50 ST-ROCK    BDFM            713272.9
+MAIN ST          7               680105.1
+59 ST-COLUMBUS   ABCD1           661871.7
+</code></pre></div></div>
+
+<p>In part 2, I look at the socio-economical factors for our subway stops and find
+the best time of day to recommend street team placements.</p>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Optimal Street Team Placement for WomenTechWomenYes&url=http://localhost:4000/2016/02/22/mta-data-analysis-for-wtwy-part-1/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/02/22/mta-data-analysis-for-wtwy-part-1/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/02/22/mta-data-analysis-for-wtwy-part-1/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#metis" class="tag">&#35; metis</a>
+          
+            <a href="/projects/#data-science" class="tag">&#35; data-science</a>
+          
+            <a href="/projects/#projects" class="tag">&#35; projects</a>
+          
+            <a href="/projects/#python" class="tag">&#35; python</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

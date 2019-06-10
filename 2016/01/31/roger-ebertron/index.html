@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>The "Roger-Ebertron": Modeling Roger Ebert's Movie Ratings - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="The "Roger-Ebertron": Modeling Roger Ebert's Movie Ratings" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Journey to Data Science
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2016/01/31/roger-ebertron/" property="og:url">
+  
+  
+    <meta content="2016-01-31T09:00:00-05:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/ebertron-theater.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="data-science" property="article:tag">
+    
+    <meta content="projects" property="article:tag">
+    
+    <meta content="regression" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="The "Roger-Ebertron": Modeling Roger Ebert's Movie Ratings">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2016/01/31/roger-ebertron/">
+  
+  
+    <meta name="twitter:description" content="Journey to Data Science
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/ebertron-theater.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/ebertron-theater.png alt="The "Roger-Ebertron": Modeling Roger Ebert's Movie Ratings">
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">The "Roger-Ebertron": Modeling Roger Ebert's Movie Ratings</h1>
+        <div class="page-date"><span>Jan 31, 2016&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p><a name="introduction"></a></p>
+
+<p>The “Roger-Ebertron v0.3” is my machine learning algorithm designed to learn how
+renowned late movie critic Roger Ebert would review movies today.</p>
+
+<p>This is Project 2 at Metis Data science. Codenamed <em>Luther</em>, our goal is to use
+web scraping, linear regression, and supervised machine learning techniques to
+look at an interesting question related to movie and film.</p>
+
+<!--more-->
+<p>With the abundance of data on movies, scripts, reviews, and forums for everyone -
+critics and general audience to express their opinion on movies - can I try to
+model Mr. Ebert’s movie ratings against everyone else’s?</p>
+
+<p>This is v0.3 because my first two attempts looked at different questions about
+movies. As <a href="/2016/01/28/liv-buli-next-big-sound-talks/">Liv Buli</a>
+said to Metis students, sometimes your data just doesn’t tell a compelling story.
+You can read about my initial attempts in an upcoming blog post.</p>
+
+<h1 id="outline">Outline</h1>
+
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#question">Question</a></li>
+  <li><a href="#data">Data</a></li>
+  <li><a href="#challenges">Challenges and Assumption</a></li>
+  <li><a href="#eda">EDA &amp; Feature Selection</a>
+    <ul>
+      <li><a href="#pair">Pair Plot with Ratings</a></li>
+      <li><a href="#genre">Genre Distribution</a></li>
+    </ul>
+  </li>
+  <li><a href="#regression">Regression</a>
+    <ul>
+      <li><a href="#reg-rating">With Ratings</a></li>
+      <li><a href="#reg-genre">With Genre</a></li>
+      <li><a href="#cv">Cross Validation</a></li>
+    </ul>
+  </li>
+  <li><a href="#testing">Testing</a></li>
+  <li><a href="#predict">Prediction</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#nextstep">Next Steps</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+<p><a name="question"></a></p>
+
+<h1 id="question">Question</h1>
+
+<p>Today, Netflix and Amazon can accurately and, most of the time, satisfactorily
+recommend movies or products that we would enjoy - based on our past viewing
+preferences, ratings, or purchases.</p>
+
+<p>So I would like to explore the question: <strong>Can we model the movie preferences of
+the late Mr. Roger Ebert and estimate how he would continue to rate movies
+today?</strong></p>
+
+<p>Furthermore, can we create a machine learning algorithm that can not only rate
+movies similarly, but maybe even analyze movie elements and write reviews as he
+had?</p>
+
+<p><a name="data"></a></p>
+
+<h1 id="data">Data</h1>
+
+<ul>
+  <li>Scraped <a href="www.rogerebert.com" target="_blank">www.rogerebert.com</a> for 4,494 movie reviews
+spanning the last 24 years of Mr. Ebert’s prolific career.</li>
+  <li><a href="http://beforethecode.com/projects/omdb/download.aspx" target="_blank">OMDb API</a> flat file
+containing movie metadata and review ratings from IMDB, Metacritic, and Rotten
+Tomatoes as of Jan. 1, 2016.</li>
+</ul>
+
+<p><a name="challenges"></a></p>
+
+<h1 id="challenges-and-assumptions">Challenges and Assumptions</h1>
+
+<p>Mr. Ebert do not review movies like most people. certainly not me.</p>
+
+<p>He understands movies. He looks at theme, cinematography, good acting, good
+direction, and plot. So then, how can we accurately predict his rating?</p>
+
+<p><img src="/assets/img/ebert.jpg" alt="Roger Ebert" />
+<em>Roger Ebert and his famous “thumbs up” pose</em></p>
+
+<p>My goal for this project is to see if we can use the reviews and ratings of the masses - general
+audience and critics - to create a model of Mr. Ebert’s ratings to see where he might
+agree and where he would deviate from everyone else.</p>
+
+<p>Sometimes ratings are considered a rank (e.g. Top 10 best movies based on ratings), which
+may be difficult to predict with linear regression. However, I assume that rating
+is in fact a continuous quantitative interval.</p>
+
+<p><a name="eda"></a></p>
+
+<h1 id="eda-and-feature-selection">EDA and Feature Selection</h1>
+
+<p>First, I perform some exploratory data analysis to get an idea of my features
+and my target. It’s simple to plot a histogram of Mr. Ebert’s movie ratings.</p>
+
+<p><img src="/assets/img/ebertron-histogram.png" alt="histogram" />
+<em>Historgram of Roger Ebert’s movie review ratings since 1994</em></p>
+
+<p>In the histogram each of 9 bins corresponds to one of the possible ratings that
+Ebert gives in this 0 - 4 star ratings, with half stars allowed. We see a left
+or negatively skewed distribution.</p>
+
+<p>It looks like he has given out almost twice as much 3 star ratings than any other.
+And more than half of his reviews are above a 3 stars. (Indeed, Ebert had addressed this
+specifically in <a href="http://www.rogerebert.com/rogers-journal/you-give-out-too-many-stars">this article</a>
+that explains how he rates his movies.)</p>
+
+<p>On the left side, we see very few movies that have the terrible rating of 0 and 0.5</p>
+
+<p><a name="pair"></a></p>
+
+<h3 id="pair-plot-and-comparison-with-other-ratings">Pair Plot and comparison with other ratings</h3>
+
+<p>Let’s examine his ratings in comparison with other critics and movie audiences
+with a pair plot looking at movie ratings from Metacritic, IMDB, and Rotten
+Tomato’s User and Critic rating.</p>
+
+<p><img src="/assets/img/ebertron-pair.png" alt="pairplot" /></p>
+
+<p>Looking across the first row (or down the first column, same thing), we see that
+there is some correlation between Ebert’s ratings with other rating metrics.
+And looking at how other ratings relate with one another, we see it tends to
+follow in a good linear relationship.</p>
+
+<p>Let’s take a closer look at Ebert’s ratings vs. IMDB’s:</p>
+
+<p><img src="/assets/img/ebertron-imdb.png" alt="IMDB" />
+<em>Scatter plot of Ebert’s ratings vs IMDB with an OLS regression line</em></p>
+
+<p>Notice how IMDB’s ratings are also left skewed. Between the two ratings, we have
+a good positive relationship with a Pearson’s correlation of 0.54. What about
+with Metacritic?</p>
+
+<p><img src="/assets/img/ebertron-metacritic.png" alt="metacritic" />
+<em>Scatter plot of Ebert’s ratings vs Metacritic scores with an OLS regression line</em></p>
+
+<p>Pearson’s correlations is higher this time: 0.68.</p>
+
+<p>Indeed, Rotten Tomatoes ratings are also positively correlated with Ebert’s
+ratings. Here’s its relationsip with Critic and User’s ratings:</p>
+
+<p><img src="/assets/img/ebertron-rt.png" alt="rottentomatoes" />
+<em>Scatter plot of Ebert’s ratings vs Rotten Tomatoes Critic and User review ratings.</em></p>
+
+<p>Pearson correlation shows a 0.68 and 0.42, indicating that there’s a stronger
+correlation with critics’ than users’ ratings.</p>
+
+<p><a name="genre"></a></p>
+
+<h3 id="genre-distribution">Genre distribution</h3>
+
+<p>Are genres important to Ebert to his review of the movie? Or maybe it’s the
+other way around; dramas tend to emphasize on plot and storytelling than say
+comedy or horror films. Let’s look at Mr. Ebert’s distribution across the 23
+genres that he has identified in his reviews:</p>
+
+<p><img src="/assets/img/ebertron-genrehist.png" alt="genre" />
+<em>Boxplot of movies ratings by Mr. Ebert grouped by their movie genres.</em></p>
+
+<p>This box plot shows the distribution of the 1st to 3rd quartiles in the colored
+box with the line in the middle as the median. This whiskers indicate the
+complete range of reviews, but any outliers are
+just dots. Outliers are determined by any significant difference from the IQR
+(colored box).</p>
+
+<p>One interpretation of the box plot can say that while most genres do run the
+gamut of ratings (as seen from the range of the whiskers), some genres are
+consistently rated better. See the higher position of the boxes for animation
+and documentaries compared to horror or sports.</p>
+
+<p>This clear distinction means that we will consider genre as an important factor.
+To incorporate a categorical feature like genre, we will construct dummy variables
+for each genre. An animated family fantasy like How to Train Your Dragon will
+have a 1 under each of those genre’s column in our model, and 0 for genres of
+which the movie is not.</p>
+
+<p><a name="regression"></a></p>
+
+<h1 id="linear-regression">Linear Regression</h1>
+
+<p>Now that I’ve done some feature engineering, I begin modeling with linear
+regression.</p>
+
+<p><a name="reg-rating"></a></p>
+
+<h3 id="1-regression-with-just-ratings">1. Regression With just ratings</h3>
+
+<p>First, what does the model look like if we just use the various ratings as
+features?
+<img src="/assets/img/ebertron-rating-lm.png" alt="lm with just ratings" /></p>
+
+<p>Our results show a decent R-squared of 0.464. The F-statistic, or
+Probability is almost zero, meaning that it is unlikely for this
+model’s results to have by chance.</p>
+
+<p>Our coefficients are cool too. It’s saying that Ebert would agree with IMDB and
+RT’s critic score, but disagree with RT’s user ratings.</p>
+
+<p><a name="reg-genre"></a></p>
+
+<h3 id="2-with-genre">2. With genre</h3>
+
+<p>Now, when I include the dummy variables for genre in the linear
+regression, I obtained a vastly improved R-squared of 0.960.</p>
+
+<p>This is good, but we want to be sure that this model is accurate. But to be sure,
+we should use cross-validation to see if our model’s result is consistent.</p>
+
+<p><a name="cv"></a></p>
+
+<h3 id="3-cross-validation">3. Cross Validation</h3>
+
+<p>So here I use Scikit Learn’s cross validation and linear regression package.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">regr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">regr</span><span class="p">,</span> <span class="n">X_2</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">scores</span>
+<span class="k">print</span> <span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span> <span class="mf">0.45167339</span>  <span class="mf">0.46498555</span>  <span class="mf">0.50503508</span>  <span class="mf">0.43065667</span>  <span class="mf">0.47263781</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">0.464997701221</span>
+</code></pre></div></div>
+
+<p>My measure of error here - mean absolute
+error is between 0.45-0.50 stars. Half a star of difference in our predicted
+rating.</p>
+
+<p><a name="testing"></a></p>
+
+<h1 id="testing-on-test-case">Testing on Test Case</h1>
+
+<p>Now we’re confident with a regression model on our training data, we apply it to
+the test set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MAE</span><span class="p">:</span> <span class="mf">0.434381067311</span>
+<span class="n">MSE</span><span class="p">:</span> <span class="mf">16.462922295</span>
+</code></pre></div></div>
+
+<p>Looks like on the test case, our model’s accuracy is pretty consistent. This is
+a good sign.</p>
+
+<p><a name="predict"></a></p>
+
+<h1 id="predicting-recent-movies">Predicting Recent Movies</h1>
+
+<p>With our model ready, I apply it to a few new movies in the beginning of 2016. I
+look at Star Wars: Episode VII - The Force Awakens and Dirty Grandpa by finding
+their current ratings on various sites, and transform their genre to boolean.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">starwars</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">93</span><span class="p">,</span> <span class="mf">8.4</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">dirtygrandpa</span> <span class="o">=</span> <span class="p">[</span><span class="mi">18</span> <span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">'Star Wars:'</span><span class="p">,</span> <span class="n">model2_fit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">starwars</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">'Dirty Grandpa:'</span><span class="p">,</span> <span class="n">model2_fit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dirtygrandpa</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="n">Star</span> <span class="n">Wars</span> <span class="n">VII</span><span class="p">:</span> <span class="mf">3.36349643</span>
+<span class="o">&gt;&gt;&gt;</span>  <span class="n">Dirty</span> <span class="n">Grandpa</span><span class="p">:</span> <span class="mf">0.52286363</span>
+</code></pre></div></div>
+
+<p>The regression model suggests that Ebert would give Star Wars between 3 and 3.5
+stars. On the other hand, Ebert agrees with most critics that Dirty Grandpa, is
+not a great movie. 0.5 stars.</p>
+
+<p><a name="conclusion"></a></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>In conclusion, I am able to build a linear regression model that can predict
+Roger Ebert’s movie ratings within 0.5 stars by using reviews by today’s film
+critic and general movie audience.</p>
+
+<p><a name="nextstep"></a></p>
+
+<h1 id="next-steps">Next Steps</h1>
+
+<p>So far I’ve been able to accurately model Roger Ebert’s reviews based on other
+reviews and the movie’s genre. But we can always add more features like a movie’s
+budget and production. Or also consider actors, directors, and cinematographer
+to our model.</p>
+
+<p>Possible extensions here may be using NLP and clustering to understand how he
+writes his reviews and what film elements he looked for. Then we can analyze a
+movie’s script or text of other reviews to see if they align with</p>
+
+<p><a name="code"></a></p>
+
+<h1 id="code">Code</h1>
+
+<p>You can find my Python code at <a href="https://github.com/ozzieliu/metis-datascience/tree/master/Projects/02-Movies-Project-Luther">Github repository</a>, documenting my process to scrape web data, cleaning it, and the regression models.</p>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=The "Roger-Ebertron": Modeling Roger Ebert's Movie Ratings&url=http://localhost:4000/2016/01/31/roger-ebertron/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/01/31/roger-ebertron/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/01/31/roger-ebertron/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#data-science" class="tag">&#35; data-science</a>
+          
+            <a href="/projects/#projects" class="tag">&#35; projects</a>
+          
+            <a href="/projects/#regression" class="tag">&#35; regression</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

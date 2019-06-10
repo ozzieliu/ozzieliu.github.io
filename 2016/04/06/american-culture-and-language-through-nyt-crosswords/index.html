@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tracing American Culture and Language Through NYT Crossword Puzzles - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="Tracing American Culture and Language Through NYT Crossword Puzzles" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Journey to Data Science
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2016/04/06/american-culture-and-language-through-nyt-crosswords/" property="og:url">
+  
+  
+    <meta content="2016-04-06T23:00:00-04:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/xw-cover.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="metis" property="article:tag">
+    
+    <meta content="projects" property="article:tag">
+    
+    <meta content="data-science" property="article:tag">
+    
+    <meta content="crosswords" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="Tracing American Culture and Language Through NYT Crossword Puzzles">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2016/04/06/american-culture-and-language-through-nyt-crosswords/">
+  
+  
+    <meta name="twitter:description" content="Journey to Data Science
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/xw-cover.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/xw-cover.png alt="Tracing American Culture and Language Through NYT Crossword Puzzles">
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Tracing American Culture and Language Through NYT Crossword Puzzles</h1>
+        <div class="page-date"><span>Apr 06, 2016&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <script type="text/javascript" src="/assets/xw/d3.js"></script>
+
+<script src="/assets/xw/nv.d3.min.js"></script>
+
+<link href="/assets/xw/nv.d3.css" rel="stylesheet" />
+
+<style>
+  .chart svg {
+    height: 400px
+    }
+
+</style>
+
+<p>Project 4 at Metis is focused around unsupervised machine learning and
+Natural Language Processing. But we also incorporate MongoDB for data storage,
+Flask as a Python based web framework, and visualization with D3.</p>
+
+<p>I love crossword puzzles and have been doing them for many years. Can I combine
+crossword puzzles with data science?!</p>
+
+<!--more-->
+
+<h1 id="contents">Contents</h1>
+
+<ul>
+  <li><a href="#background">Background</a></li>
+  <li><a href="#goal">Goal</a></li>
+  <li><a href="#stack">Data Science Stack</a></li>
+  <li><a href="#eda">Exploratory Data Analysis</a></li>
+  <li><a href="#ml">Machine Learning</a></li>
+  <li><a href="#challenges">Considerations and Challenges</a></li>
+  <li><a href="#vis">Visualizations</a>
+    <ul>
+      <li><a href="#uber">Uber</a></li>
+      <li><a href="#euro">Euro</a></li>
+      <li><a href="#net">Net</a></li>
+    </ul>
+  </li>
+  <li><a href="#nextsteps">Next Steps</a></li>
+  <li><a href="#conclusion">Last Word</a></li>
+</ul>
+
+<p><a name="background"></a></p>
+
+<h1 id="background">Background</h1>
+
+<p>So of course, I researched and Googled to see if anything similar has been done, and I came
+across a timely op-ed piece in the New York Times. Professor Charles Kruzman from UNC
+wrote a very interesting article looking at how the
+<a href="http://www.nytimes.com/interactive/2016/02/07/opinion/what-74-years-of-times-crosswords-say-about-the-words-we-use.html">NYT Crossword puzzles say about the words we use</a>.
+That’s it! I can extend on his project by using data science and unsupervised
+machine learning. While Kruzman’s research focused on the foreign language usage,
+I want to perform topic modeling on clues and answers, without manual input.</p>
+
+<p>I was able to obtain about 40 years of NYT crossword puzzles with further research
+on the web. So I parsed the raw data from JSON and stored it locally with MongoDB.
+That’s 14,000+ puzzles with 1.2 million clue-answer pairs.</p>
+
+<p><a name="goal"></a></p>
+
+<h1 id="goal">Goal</h1>
+
+<p>We know that crossword puzzles are <strong>creative and clever</strong>, but most importantly
+they are <strong>current</strong>. Constructors and editors are well aware of what their
+solvers know. In other words, crossword puzzles reflect culture and current
+events. And by looking at them over time, we can see how American society has
+shifted and how the English language has evolved.</p>
+
+<p>My goal is straightforward: Given a word or phrase used as an answer in past
+crossword puzzles, I want to visualize how its usage and meaning has changed over
+time. And in doing so, get an unique view into how American culture and language
+has evolved.</p>
+
+<p><a name="stack"></a></p>
+
+<h1 id="stack">Stack</h1>
+
+<p>The technology stack’s not too complicated. I store data in MongoDB, and use
+Flask to perform my Machine Learning. Then Flask interacts with a Javascript
+front end to serve the D3 visualizations. Here’s a rough diagram:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User &lt;----&gt; D3, Javascript, HTML
+            Flask
+            Python
+            PyMongo
+Raw Data -&gt; MongoDB
+</code></pre></div></div>
+
+<p><a name="eda"></a></p>
+
+<h1 id="exploratory-data-analysis">Exploratory Data Analysis</h1>
+
+<p>With access to our raw data in place, I can query the database for a specific
+answer and see find all the clues used to describe the answer over time.</p>
+
+<p>For example, here’s a snippet of the answer ELMO:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Answer</th>
+      <th>Clue</th>
+      <th>Date</th>
+      <th>Day of Week</th>
+      <th>Editor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ELMO</td>
+      <td>Patron saint of sailors</td>
+      <td>10/30/2008</td>
+      <td>4</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Sailor’s saint</td>
+      <td>1/15/2009</td>
+      <td>4</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Googly-eyed Muppet</td>
+      <td>4/20/2009</td>
+      <td>1</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Red-haired PBS star</td>
+      <td>10/4/2009</td>
+      <td>7</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Muppet with a goldfish named Dorothy</td>
+      <td>12/13/2009</td>
+      <td>7</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Must-have toy of 1996</td>
+      <td>12/26/2009</td>
+      <td>6</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Citizen of Sesame Street</td>
+      <td>3/7/2010</td>
+      <td>7</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Adm. Zumwalt, chief of naval operations during…</td>
+      <td>7/7/2010</td>
+      <td>3</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Tickle Me ___</td>
+      <td>3/28/2011</td>
+      <td>1</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>Patron saint of sailors</td>
+      <td>4/5/2011</td>
+      <td>2</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>ELMO</td>
+      <td>“Tickle Me” doll</td>
+      <td>7/11/2011</td>
+      <td>1</td>
+      <td>Will Shortz</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Date</strong> is informative and <strong>Day of Week</strong> indicate
+the difficulty of the puzzle. In the New York Times, Monday (1) is easiest and
+gets progressively harder throughout the week, with Saturday being the toughest.
+Sunday is usually a bigger puzzle at about a Wednesday-Thursday difficulty.</p>
+
+<p>There’s a good amount of variations in clues here, but they mostly refer to the
+furry red muppet on Sesame Street. In the 80s (not shown), ELMO is mostly used to describe
+St. Elmo, the patron’s saint for sailors or the pollster Elmo Roper. Indeed, Roper only appeared
+once since the 90s. We immediately see the difference of how Elmo is used.</p>
+
+<p><img src="/assets/img/xw-elmo.png" alt="elmo" />
+<em>Notable Elmo’s throughout time: <a href="https://en.wikipedia.org/wiki/Elmo">Muppet</a>
+and <a href="https://en.wikipedia.org/wiki/Erasmus_of_Formia">Patron Saint of Sailors and Abdominal Pain</a></em></p>
+
+<p>Here’s another example that I enjoy with the word EURO:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Answer</th>
+      <th>Clue</th>
+      <th>Date</th>
+      <th>Day of Week</th>
+      <th>Editor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EURO</td>
+      <td>Large kangaroo</td>
+      <td>5/12/1987</td>
+      <td>2</td>
+      <td>Eugene T. Maleska</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Large kangaroo</td>
+      <td>2/19/1988</td>
+      <td>5</td>
+      <td>Eugene T. Maleska</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Kind of bonds or dollars</td>
+      <td>10/19/1989</td>
+      <td>4</td>
+      <td>Eugene T. Maleska</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Wallaroo</td>
+      <td>3/8/1990</td>
+      <td>4</td>
+      <td>Eugene T. Maleska</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Large kangaroo</td>
+      <td>7/17/1990</td>
+      <td>2</td>
+      <td>Eugene T. Maleska</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Replacement for the mark, franc and lira</td>
+      <td>5/14/2012</td>
+      <td>1</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>New circulator of 2002</td>
+      <td>6/16/2012</td>
+      <td>6</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Prefix with zone</td>
+      <td>6/17/2012</td>
+      <td>7</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Replacement for the mark and franc</td>
+      <td>7/16/2012</td>
+      <td>1</td>
+      <td>Will Shortz</td>
+    </tr>
+    <tr>
+      <td>EURO</td>
+      <td>Continental coin</td>
+      <td>10/29/2012</td>
+      <td>1</td>
+      <td>Will Shortz</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Euro used to be described as a large red kangaroo? Boy are times different.
+And we’ll see the rise and fall of meanings later with some cool visulizations.</p>
+
+<p><img src="/assets/img/xw-euro.jpg" alt="euro" />
+<em>Euro: Nickname for a wallaroo, a moderately large macropod, intermediate in
+size between kangaroos and wallabies</em></p>
+
+<p><a name="ml"></a></p>
+
+<h1 id="machine-learning">Machine Learning</h1>
+
+<p>So far I’ve injected my own insight to pick out the clusters of clues used. But
+let’s have machine learning take care of that.</p>
+
+<p>The first thing I do is query my database for a given word to collect all the
+clues used. Then take all the clues and perform bag-of-words to get vectors of each
+tokenized clues. Scikit-Learn’s CountVectorizer is perfect for this. The result
+is a sparse matrix that looks something like this for the word CLAY</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clue</th>
+      <th>Ali</th>
+      <th>once</th>
+      <th>great</th>
+      <th>compromiser</th>
+      <th>pigeon</th>
+      <th>grass</th>
+      <th>…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ali, once</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>The Great Compromiser</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>The Great Pacificator</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>Kind of pigeon</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>Grass alternative</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>Soil</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>…</td>
+    </tr>
+    <tr>
+      <td>Notable Whig</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>…</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We can see that the Great Compromiser and The Great Pacificator similarly
+refers to early American politician <a href="https://en.wikipedia.org/wiki/Henry_Clay">Henry Clay</a> because they share the word
+“Great”, and with k-means clustering by comparing their Euclidean distances,
+the algorithm can do a good job picking similar topics out.</p>
+
+<p>Here’s a snippet of CLAY when trying 5 clusters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Answer</th>
+      <th>Clue</th>
+      <th>Date</th>
+      <th>DoW</th>
+      <th>Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CLAY</td>
+      <td>Ali, once</td>
+      <td>4/26/1994</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>*Trapshooting … Ali … kiln</td>
+      <td>5/23/2002</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>Ali, before he was Ali</td>
+      <td>11/22/2010</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>The Great Pacificator</td>
+      <td>9/20/1987</td>
+      <td>7</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>The Great Compromiser</td>
+      <td>11/20/1988</td>
+      <td>7</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>The Great Pacificator</td>
+      <td>2/18/1991</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>Potter’s supply</td>
+      <td>12/25/2001</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>Modeler’s need</td>
+      <td>1/22/2006</td>
+      <td>7</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>CLAY</td>
+      <td>Famous Whig</td>
+      <td>7/4/1978</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Group 1 and 2 makes sense, but in group 3 how did <em>Famous Whig</em> get related to
+potter’s clay? So now I consider some concerns when it comes to crossword puzzles.</p>
+
+<p><a name="challenges"></a></p>
+
+<h1 id="considerations-and-challenges">Considerations and Challenges</h1>
+
+<p>Crosswords are puzzles and clues are cleverly designed to be tricky - and
+therefore fun when you can figure it out. But this is a challenge for my bag-of-words
+model. Certain clues are phrased in such a way that there’s no immediate
+connection to the answer. For example, here a few of my favorite ones from this
+year:</p>
+
+<ul>
+  <li><em>Drooling from both sides of the mouth</em>: DOUBLEDRIBBLE</li>
+  <li><em>Fly swatter?</em>: BUZZERBEATER</li>
+</ul>
+
+<p>It’s only when you realize that there’s a basketball theme in the puzzle that
+these answers start to make sense. How can I incorporate these nuances in my model?</p>
+
+<p>In addition, clues are sparse, a few words at most. This reduces the number of
+features available to me to measure similarity.</p>
+
+<p>But there are certain rules that I can use to my advantage:</p>
+
+<ul>
+  <li>Puzzles are symmetrical (rotational and at times horizontal)</li>
+  <li>Answers are longer than 3 letters</li>
+  <li>Tenses and plurality match</li>
+  <li>Abbreviations are indicated with periods or <em>abbrv.</em></li>
+  <li>Foreign words are also hinted as such</li>
+  <li>Punctuations have meanings
+    <ul>
+      <li>? Question marks mean wordplay</li>
+      <li>! Exclamation marks indicate it’s a phrase or exclamation</li>
+      <li>” “ Quotes are also for sayings, or the title of book, movie, or work</li>
+      <li>___ Blanks indicates a fill-in-the-blank clue</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In addition, answers come from common sources: geographical names like mountain
+ranges, rivers, and cities can be found in an atlas. References to movies, actors/actresses,
+books, or artists are usually popular enough.</p>
+
+<p>I can’t address all of these challenges, but by creating my own <strong>tokenizer</strong>, I can
+stem words so that I capture all the different tenses and plurality. And by
+keeping capitalized words, I have a rough Named Entity Recognition system to
+relate similar proper nouns. I also keep track of any punctuation that shows up
+so that I can try to cluster similar clues like if wordplay or abbreviations are
+present.</p>
+
+<p><a name="viz"></a></p>
+
+<h1 id="visualization">Visualization</h1>
+
+<p>OK, now that I have beefed up my features, I can run my model and easily go from
+my Python dictionary output to a JSON so that Javascript and D3 can read it. I
+leverage NVD3 here for some great looking out-of-the-box charts.</p>
+
+<p>The charts show how the answer was used in the past 40 years by graphing the
+number of occurrences of the clue cluster per year. Here are some notable
+illustrations:</p>
+
+<p><a name="uber"></a></p>
+
+<h3 id="uber">UBER</h3>
+
+<div id="uber" class="chart">
+  <svg></svg>
+</div>
+
+<script type="text/javascript" src="/assets/xw/crossword.js"></script>
+
+<p>As Professor Kruzman had shown in his NYT op-ed, UBER has gone through some
+changes. In the past 40 years, my algorithm gathered that there are 4 distinct clusters
+of clues used to describe UBER. In the light blue, we see it is consistently
+used as a German word such as <strong>Over, in Berlin</strong>. In the dark orange, as a fill
+in the blank in the German national anthem: <strong>“Deutschland ___ alles”</strong>. Then in
+late 90s, as a <strong>Modern prefix meaning “super”</strong>. In the past few years, and coinciding
+with the decline of UBER as a German word, it’s the <strong>Modern alternative to a taxi</strong>
+as we know it today.</p>
+
+<p><a name="euro"></a></p>
+
+<h3 id="euro">EURO</h3>
+
+<div id="euro" class="chart">
+  <svg></svg>
+</div>
+
+<p>As I mentioned earlier, EURO has an interesting history too. While it’s
+consistently used as a <strong>prefix for European</strong> things like eurodollar or
+eurobonds, before the mid 90s, EURO was sometimes used as a tough clue for a
+<strong>Large kangaroo</strong>. That use disappeared as the Euro currency started gaining
+traction in the nineties. Its use as a <strong>new currency</strong> peaked at 1999 with the
+official adoption of the currency. But then it lost its newness to gradually became
+a <strong>replacement currency</strong>. Perhaps a reminiscence of the franc or Mark.</p>
+
+<p><a name="net"></a></p>
+
+<h3 id="net">NET</h3>
+
+<div id="net" class="chart">
+  <svg></svg>
+</div>
+
+<p>NET continues to be used as a term in <strong>sports</strong> such as fishing, volleyball, or
+tennis, and to a small degree as a bottom line modifier such as net <strong>take-home pay</strong>.
+But we can also trace the rise and importance of the <strong>internet</strong> in the 90s
+just from crossword puzzles.</p>
+
+<h2 id="whats-a-good-k">What’s a good k?</h2>
+
+<p>K is the number of clusters in my k-means algorithms that I want to try to find.
+So far I’ve found k between 3-5 yields the best result, and I haven’t found any
+answers that have more than 6 different meanings over time. But as a next step,
+as I mention below, I want to make it dynamic for anyone to try to see what
+clusters come up if you can vary k.</p>
+
+<p><a name="nextsteps"></a></p>
+
+<h1 id="extensions-and-next-steps">Extensions and Next Steps</h1>
+
+<p>I only had 2 weeks to work on this project, so there are a lot of different things
+I want to eventually try.</p>
+
+<ol>
+  <li>First of all, I want to go beyond k-means to perform my clustering. Even
+though I don’t have a lot of features, I think a Word2Vec model with neural
+network could yield better results. Or LDA or the new HDA.</li>
+  <li>Next, make a fully functional web-app that many people can try by entering
+their own word and see how its usage in crossword puzzles differed over time.
+This should allow for a chosen k number of clusters and generate a graph in
+a reasonable amount of time.</li>
+  <li>Finally, attempt to build off of this exploratory project and generate a
+themed crossword puzzle? I try to do this in my final project at Metis.</li>
+</ol>
+
+<p><a name="conclusion"></a></p>
+
+<h1 id="last-word">Last Word</h1>
+
+<p>This has been a very fun project for me, but look out as I host this project on
+the web for you to try out. Also, I will be putting my code on Github shortly.
+Let me know if you have questions or suggestions!</p>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Tracing American Culture and Language Through NYT Crossword Puzzles&url=http://localhost:4000/2016/04/06/american-culture-and-language-through-nyt-crosswords/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/04/06/american-culture-and-language-through-nyt-crosswords/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/04/06/american-culture-and-language-through-nyt-crosswords/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#metis" class="tag">&#35; metis</a>
+          
+            <a href="/projects/#projects" class="tag">&#35; projects</a>
+          
+            <a href="/projects/#data-science" class="tag">&#35; data-science</a>
+          
+            <a href="/projects/#crosswords" class="tag">&#35; crosswords</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

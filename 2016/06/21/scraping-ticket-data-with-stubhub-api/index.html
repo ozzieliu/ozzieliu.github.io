@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Scraping 3rd-Party Ticket Prices Using Stubhub's API - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="Scraping 3rd-Party Ticket Prices Using Stubhub's API" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Journey to Data Science
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2016/06/21/scraping-ticket-data-with-stubhub-api/" property="og:url">
+  
+  
+    <meta content="2016-06-21T22:00:00-04:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/stubhub-stadium.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="api" property="article:tag">
+    
+    <meta content="projects" property="article:tag">
+    
+    <meta content="python" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="Scraping 3rd-Party Ticket Prices Using Stubhub's API">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2016/06/21/scraping-ticket-data-with-stubhub-api/">
+  
+  
+    <meta name="twitter:description" content="Journey to Data Science
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/stubhub-stadium.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/stubhub-stadium.png alt="Scraping 3rd-Party Ticket Prices Using Stubhub's API">
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Scraping 3rd-Party Ticket Prices Using Stubhub's API</h1>
+        <div class="page-date"><span>Jun 21, 2016&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>I have a colleague working in entertainment that needed to gather ticket
+prices on 3rd party sales to get a reading on the popularity and pricing of
+events. Currently, the colleague’s company pays a large sum to a contractor to
+scrape this data daily. We wanted to see if this was possible and easy to do
+using the StubHub API.</p>
+
+<!--more-->
+
+<div style="background-color: #f2ffcc">
+<p><strong>Update 3/5/2017</strong>: I'm glad my blog post has been helpful for a lot of users who
+are interested in getting started with getting data from StubHub's API using
+Python. But since the blog post last June, there's been a lot of changes and I
+wanted to update my post with the latest details.</p>
+
+<p>First, Stubhub had deprecated the Inventory Search API with a newer version, so
+the new <a href="https://gist.github.com/ozzieliu/9fbbc83b354c568709dc4e6a30fea54f">code</a>
+is updated to reflect that.</p>
+
+<p>If you're having trouble subscribing to InventorySearchAPI-v2, see the last
+section on this post to manually subscribe to it.</p></div>
+
+<h1 id="initial-problem">Initial Problem</h1>
+
+<p>The output product from the contractor’s tool is a simple flat file with event,
+venue information, and all the tickets currently listed for sale with seat
+information, quantity, and prices.</p>
+
+<p>This sounds pretty straight forward and I should be able to use StubHub’s API
+to gather this information. So I start by doing some homework.</p>
+
+<p>You can find my full code on <a href="https://gist.github.com/ozzieliu/9fbbc83b354c568709dc4e6a30fea54f" target="_blank">GitHub</a></p>
+
+<h1 id="getting-started-with-stubhubs-api">Getting Started with StubHub’s API</h1>
+
+<p>StubHub has provided a robust set of <a href="https://developer.stubhub.com/store/" target="_blank">API</a>
+to access its site with pretty thorough <a href="https://developer.stubhub.com/store/apis/docs" target="_blank">documentation</a>,
+including a <a href="https://developer.stubhub.com/store/site/pages/guides.jag?type=gettingstarted" target="_blank">Getting Started Guide</a> to sign up for a StubHub account and request for API keys.</p>
+
+<p>So I spent a few hours reading up on the developer interface to create a
+proof of concept for my colleague.</p>
+
+<h1 id="step-1---obtaining-stubhub-user-access-token">Step 1 - Obtaining StubHub User Access Token</h1>
+
+<p>First step to use the API is to request an Authorization Token that my Python
+app will use. StubHub has some instructions using a REST client, but it’s a
+little different with Python.</p>
+
+<p>Requesting an Anthorization Token will require us to encrypt our Consumer Key
+and Consumer Secret. First I enter my StubHub user account and my API info:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="c">## Enter user's API key, secret, and Stubhub login</span>
+<span class="n">app_token</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter app token: '</span><span class="p">)</span>
+<span class="n">consumer_key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter consumer key: '</span><span class="p">)</span>
+<span class="n">consumer_secret</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter consumer secret: '</span><span class="p">)</span>
+<span class="n">stubhub_username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter Stubhub username (email): '</span><span class="p">)</span>
+<span class="n">stubhub_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Enter Stubhub password: '</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then I concat the key and secret with the colon as per the instructions, and
+create the <strong>basic authorization token</strong> by encrpyting it in base64.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">combo</span> <span class="o">=</span> <span class="n">consumer_key</span> <span class="o">+</span> <span class="s">':'</span> <span class="o">+</span> <span class="n">consumer_secret</span>
+<span class="n">basic_authorization_token</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">combo</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Now I create a <strong>post</strong> request with the appropriate headers and use <code class="highlighter-rouge">requests</code>
+to talk to StubHub. I store my response in <code class="highlighter-rouge">token_response</code>. And I retrieve 2
+fields in particular: The <code class="highlighter-rouge">access_token</code> is what I’m after, and my <code class="highlighter-rouge">user_GUID</code>
+will be handy for some API calls.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.stubhub.com/login'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'Content-Type'</span><span class="p">:</span><span class="s">'application/x-www-form-urlencoded'</span><span class="p">,</span>
+        <span class="s">'Authorization'</span><span class="p">:</span><span class="s">'Basic '</span><span class="o">+</span><span class="n">basic_authorization_token</span><span class="p">,}</span>
+<span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'grant_type'</span><span class="p">:</span><span class="s">'password'</span><span class="p">,</span>
+        <span class="s">'username'</span><span class="p">:</span><span class="n">stubhub_username</span><span class="p">,</span>
+        <span class="s">'password'</span><span class="p">:</span><span class="n">stubhub_password</span><span class="p">,</span>
+        <span class="s">'scope'</span><span class="p">:</span><span class="s">'PRODUCTION'</span><span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">r</span>
+<span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+
+<span class="n">token_respoonse</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">token_respoonse</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">]</span>
+<span class="n">user_GUID</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">'X-StubHub-User-GUID'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h1 id="step-2---searching-inventory-of-an-event">Step 2 - Searching Inventory of an Event</h1>
+
+<p>To find the ticket inventory of an event, we’ll use the <a href="https://developer.stubhub.com/store/site/pages/doc-viewer.jag?category=Search&amp;api=InventorySearchAPI&amp;endpoint=searchinventory&amp;version=v1" target="_blank">InventorySearch API</a>. Of course we’ll need a specific Event ID.</p>
+
+<p>There are 2 ways to get this. Let’s say my app is to track the prices of
+<a href="http://www.hamiltonbroadway.com/" target="_blank">Hamilton</a> tickets. On the event’s StubHub
+page, there’s a unique 7 digit in the URL that’s the Event ID. Just copy that
+number:</p>
+
+<p><img src="/assets/img/stubhub-eventid.png" alt="eventid" /></p>
+
+<p>The second way involves using the <a href="https://developer.stubhub.com/store/site/pages/doc-viewer.jag?category=Search&amp;api=InventorySearchAPIv2&amp;endpoint=searchListing&amp;version=v2" target="_blank">EventSearchAPI - v2</a> much like searching for an event on the
+website. I leave this to the reader to explore.</p>
+
+<p>With the Event ID, now it’s just a matter of making a <strong>get</strong> request with the
+proper headers:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inventory_url</span> <span class="o">=</span> <span class="s">'https://api.stubhub.com/search/inventory/v2'</span>
+<span class="n">eventid</span> <span class="o">=</span> <span class="s">'9670859'</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">'eventid'</span><span class="p">:</span><span class="n">eventid</span><span class="p">,</span> <span class="s">'rows'</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
+<span class="n">headers</span><span class="p">[</span><span class="s">'Authorization'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'Bearer '</span> <span class="o">+</span> <span class="n">access_token</span>
+<span class="n">headers</span><span class="p">[</span><span class="s">'Accept'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'application/json'</span>
+<span class="n">headers</span><span class="p">[</span><span class="s">'Accept-Encoding'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'application/json'</span>
+
+<span class="n">inventory</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">inventory_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>One thing to note, that this API defaults to return 100 rows. If we wany more,
+I can add <code class="highlighter-rouge">rows</code> as a parameter. See the API documentation for more details.
+<code class="highlighter-rouge">inventory</code> is my JSON results. I’ll convert it to a dictionary with</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">inv</span> <span class="o">=</span> <span class="n">inventory</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>In particular, I want to see the ticket listing, so I’ll call the <code class="highlighter-rouge">listing</code> key:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pprint</span>
+<span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">inv</span><span class="p">[</span><span class="s">'listing'</span><span class="p">])</span>
+
+<span class="p">[{</span><span class="s">u'currentPrice'</span><span class="p">:</span> <span class="p">{</span><span class="s">u'amount'</span><span class="p">:</span> <span class="mf">663.3</span><span class="p">,</span> <span class="s">u'currency'</span><span class="p">:</span> <span class="s">u'USD'</span><span class="p">},</span>
+  <span class="s">u'deliveryMethodList'</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+  <span class="s">u'deliveryTypeList'</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+  <span class="s">u'dirtyTicketInd'</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span>
+  <span class="s">u'listingId'</span><span class="p">:</span> <span class="mi">1207961705</span><span class="p">,</span>
+  <span class="s">u'listingPrice'</span><span class="p">:</span> <span class="p">{</span><span class="s">u'amount'</span><span class="p">:</span> <span class="mf">560.0</span><span class="p">,</span> <span class="s">u'currency'</span><span class="p">:</span> <span class="s">u'USD'</span><span class="p">},</span>
+  <span class="s">u'quantity'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s">u'row'</span><span class="p">:</span> <span class="s">u'G'</span><span class="p">,</span>
+  <span class="s">u'seatNumbers'</span><span class="p">:</span> <span class="s">u'9,11'</span><span class="p">,</span>
+  <span class="s">u'sectionId'</span><span class="p">:</span> <span class="mi">659009</span><span class="p">,</span>
+  <span class="s">u'sectionName'</span><span class="p">:</span> <span class="s">u'Mezzanine Rear Sides'</span><span class="p">,</span>
+  <span class="s">u'sellerOwnInd'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">u'sellerSectionName'</span><span class="p">:</span> <span class="s">u'Mezzanine Rear Sides'</span><span class="p">,</span>
+  <span class="s">u'splitOption'</span><span class="p">:</span> <span class="s">u'0'</span><span class="p">,</span>
+  <span class="s">u'splitVector'</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+  <span class="s">u'ticketSplit'</span><span class="p">:</span> <span class="s">u'2'</span><span class="p">,</span>
+  <span class="s">u'zoneId'</span><span class="p">:</span> <span class="mi">105098</span><span class="p">,</span>
+  <span class="s">u'zoneName'</span><span class="p">:</span> <span class="s">u'Mezzanine Rear'</span><span class="p">},</span>
+  <span class="o">...</span>
+</code></pre></div></div>
+
+<p>Now I want to convert the dictionary to a Pandas DataFrame. And since <code class="highlighter-rouge">currentPrice</code> column is a nested dictionary with ticket price and currency,
+I extract just the USD amount as a new column in my dataframe:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="n">listing_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">inv</span><span class="p">[</span><span class="s">'listing'</span><span class="p">])</span>
+<span class="n">listing_df</span><span class="p">[</span><span class="s">'amount'</span><span class="p">]</span> <span class="o">=</span> <span class="n">listing_df</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'currentPrice'</span><span class="p">][</span><span class="s">'amount'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">listing_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'tickets_listing.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Here’s what the CSV file looks like now:</p>
+
+<p><img src="/assets/img/stubhub-csv.png" alt="csv" /></p>
+
+<h1 id="step-3---adding-event-and-venue-info">Step 3 - Adding Event and Venue Info</h1>
+
+<p>I have the ticket information, but what if I want to know some more details
+about the venue?</p>
+
+<p>In that case, I use StubHub’s <a href="https://developer.stubhub.com/store/site/pages/doc-viewer.jag?category=Search&amp;api=EventSearchAPIv2&amp;endpoint=searchforeventsv2&amp;version=v2" target="_blank">EventSearchAPI</a> to get the details.</p>
+
+<p>I already have the eventID, so I just add it to the new URL, and take a peek at
+the response in dict form:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">info_url</span> <span class="o">=</span> <span class="s">'https://api.stubhub.com/catalog/events/v2/'</span> <span class="o">+</span> <span class="n">eventid</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">info_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="p">{</span><span class="s">u'ancestors'</span><span class="p">:</span> <span class="p">{</span><span class="s">u'categories'</span><span class="p">:</span> <span class="p">[{</span><span class="s">u'id'</span><span class="p">:</span> <span class="mi">174</span><span class="p">},</span> <span class="p">{</span><span class="s">u'id'</span><span class="p">:</span> <span class="mi">700188</span><span class="p">}],</span>
+                <span class="s">u'groupings'</span><span class="p">:</span> <span class="p">[{</span><span class="s">u'id'</span><span class="p">:</span> <span class="mi">1500226</span><span class="p">}],</span>
+                <span class="s">u'performers'</span><span class="p">:</span> <span class="p">[{</span><span class="s">u'id'</span><span class="p">:</span> <span class="mi">1500227</span><span class="p">}]},</span>
+ <span class="s">u'bobId'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+ <span class="s">u'categories'</span><span class="p">:</span> <span class="p">{</span><span class="s">u'primaryCategory'</span><span class="p">:</span> <span class="p">{</span><span class="s">u'id'</span><span class="p">:</span> <span class="mi">700188</span><span class="p">,</span>
+                                      <span class="s">u'name'</span><span class="p">:</span> <span class="s">u'Musicals Tickets'</span><span class="p">}},</span>
+ <span class="s">u'currencyCode'</span><span class="p">:</span> <span class="s">u'USD'</span><span class="p">,</span>
+ <span class="s">u'description'</span><span class="p">:</span> <span class="s">u'Hamilton New York Tickets'</span><span class="p">,</span>
+ <span class="s">u'eventDateLocal'</span><span class="p">:</span> <span class="s">u'2016-10-22T20:00:00-04:00'</span><span class="p">,</span>
+ <span class="s">u'eventDateUTC'</span><span class="p">:</span> <span class="s">u'2016-10-23T00:00:00+0000'</span><span class="p">,</span>
+ <span class="s">u'eventMeta'</span><span class="p">:</span> <span class="p">{</span><span class="s">u'keywords'</span><span class="p">:</span> <span class="s">u'Hamilton Richard Rodgers Theatre, Hamilton New York, Hamilton New York 10/22 0800 PM, Hamilton New York 10/22, Hamilton Richard Rodgers Theatre 10/22, buy, sell, tickets, ticket'</span><span class="p">,</span>
+                <span class="s">u'locale'</span><span class="p">:</span> <span class="s">u'en_US'</span><span class="p">,</span>
+                <span class="s">u'primaryAct'</span><span class="p">:</span> <span class="s">u'Hamilton New York'</span><span class="p">,</span>
+                <span class="s">u'primaryName'</span><span class="p">:</span> <span class="s">u'Hamilton New York'</span><span class="p">,</span>
+                <span class="s">u'secondaryName'</span><span class="p">:</span> <span class="s">u'Hamilton'</span><span class="p">,</span>
+                <span class="s">u'seoDescription'</span><span class="p">:</span> <span class="s">u'Hamilton 08:00 PM'</span><span class="p">,</span>
+                <span class="s">u'seoTitle'</span><span class="p">:</span> <span class="s">u'Hamilton Richard Rodgers Theatre New York Tickets - 2016-10-22'</span><span class="p">},</span>
+ <span class="o">...</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Lots of relevant info here, and it’s just a matter of extracting what I need
+from the dict. Then I can add it to my DataFrame before exporting the final
+result to CSV.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>After doing some more data cleaning to match the report’s format, I sent it over
+to my colleague. In a few hours, I was able to show that I can use StubHub’s API
+to gather the ticket data required. But there were some limitations:</p>
+
+<p>My friend needed this data for about 1,200 events everyday. With StubHub’s free
+tier, I am limited to 10 requests per minute. If each event took 2 API calls,
+then this report would take 4 hours to generate everyday on the free tier. I’m
+sure there’s a way to pay StubHub for a higher tier access.</p>
+
+<p>For now, I’ve proved that the report is possible with some API calls. And he’ll
+exploring some next steps with his team.</p>
+
+<h1 id="update---subscribing-to-stubhubs-inventory-search-api---v2">Update - Subscribing to Stubhub’s Inventory Search API - v2</h1>
+
+<p>Around December or January, Stubhub had deprecated version 1 of their Inventory
+Search API in favor of version 2, but a lot of people including me, had some
+difficulty subscribing to the API. Looks like by subscribing to “All API”, it
+doesn’t include v2 yet. And clicking on InventorySearchAPI-v2 didn’t go anywhere.</p>
+
+<p><img src="/assets/img/stubhub-api.png" alt="csv" /></p>
+
+<p>BIT I found a workaround by selecting InventorySearchAPI and then manually
+changing the URL from “v1” to “v2”.</p>
+
+<p><img src="/assets/img/stubhub-v2.png" alt="csv" /></p>
+
+<p>And then subscribe it to your application! You can also just use this link:
+<a href="https://developer.stubhub.com/store/apis/info?name=InventorySearchAPI&amp;version=v2&amp;provider=runiu&amp;category=Search&amp;api=InventorySearchAPI" target="_blank">https://developer.stubhub.com/store/apis/info?name=InventorySearchAPI&amp;version=v2&amp;provider=runiu&amp;category=Search&amp;api=InventorySearchAPI</a></p>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Scraping 3rd-Party Ticket Prices Using Stubhub's API&url=http://localhost:4000/2016/06/21/scraping-ticket-data-with-stubhub-api/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/06/21/scraping-ticket-data-with-stubhub-api/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/06/21/scraping-ticket-data-with-stubhub-api/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#api" class="tag">&#35; api</a>
+          
+            <a href="/projects/#projects" class="tag">&#35; projects</a>
+          
+            <a href="/projects/#python" class="tag">&#35; python</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

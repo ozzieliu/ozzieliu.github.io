@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Week 2 and 3 at Metis - The Land of Oz</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="The Land of Oz" property="og:site_name">
+  
+    <meta content="Week 2 and 3 at Metis" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Journey to Data Science
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/2016/01/29/metis-week-2-3/" property="og:url">
+  
+  
+    <meta content="2016-01-29T22:00:00-05:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="/img/profile.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="metis" property="article:tag">
+    
+    <meta content="data-science" property="article:tag">
+    
+    <meta content="machine-learning" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ozzieliu">
+  
+    <meta name="twitter:title" content="Week 2 and 3 at Metis">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/2016/01/29/metis-week-2-3/">
+  
+  
+    <meta name="twitter:description" content="Journey to Data Science
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/profile.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/profile.png" alt="Ozzie Liu"></a>
+      </div>
+      <div class="author-name">Ozzie Liu</div>
+
+      <p>The Land of Oz</p>
+
+      <p class="about-quote">"...to embark upon a hazardous and technically unexplainable journey into the outer stratosphere" of data science.</p>
+
+      <h3 class="contact-title">.</h3>
+
+      <p><a href="/about">About Ozzie</a></p>
+      <p><a href="/projects">Projects</a></p>
+      <p><a href="/contact">Contact me</a></p>
+    </div>
+  </header> <!-- End Header -->
+
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ozzieliu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        <!-- 
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+         -->
+        
+          <li class="github"><a href="http://github.com/ozzieliu" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://www.linkedin.com/in/ozzieliu" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        
+        
+          <li class="email"><a href="/contact"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>version 1.0 (lion)<br>
+      2019 &copy; Ozzie Liu</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Week 2 and 3 at Metis</h1>
+        <div class="page-date"><span>Jan 29, 2016&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <p>Week 3 of Metis Datascience Bootcamp just wrapped up today with project presentations
+of our 2nd project. My project on movie data
+will be featured in next post, but here’s what else we’ve done in the past 2 weeks,
+including linear regression, web scraping, and statistics…
+<!--more--></p>
+
+<h2 id="supervised-learning">Supervised Learning</h2>
+<p>Week 2 was kicked off with an immediate deep dive with supervised learning; the
+modeling of a data set based on defined targets. With a well trained model, we
+can apply that to predict and test additional inputs to determine a possible
+result.</p>
+
+<p>The first topic was regression:</p>
+
+<h3 id="linear-regression">Linear Regression</h3>
+<p>I have some experience with linear regression, and its concepts are easy enough
+to visualize with 1 or 2 features. But I really appreciated that the class
+emphasized on all the assumptions and shortcomings when applying linear
+regression - such as bias vs. variance, overfitting, the curse of dimensionality,
+and the concern of heteroscedastic random variables in our data.</p>
+
+<p>As with any machine learning algorithm, the importance of splitting our data
+into training and test sets is critical. We looked at <strong>cross-validation</strong> with
+Leave-one-out (LOOCV), k-fold, and random sampling as possible types to improve
+the testing of our linear regression model.</p>
+
+<p>To find the best features for our linear regression model, we learn several
+regularization method such as <strong>lasso</strong> and <strong>ridge regression</strong>.</p>
+
+<p>What I’ve seen from learning to apply linear regression with Python is the lack
+of documentation and examples that fully explain how. So I plan on writing a few
+articles demonstrating examples of applying linear regression with the
+Python Statsmodels package.</p>
+
+<h2 id="statistics-and-probability">Statistics and Probability</h2>
+<p>We also began studying statistics and probability. Starting with a review
+of basic probability and continuous probability, we moved from frequentist to
+the interesting realm of Bayesian statistics with conditional probability and
+Bayes Theorem.</p>
+
+<p>On the statistics side, we explored <strong>null hypothesis testing</strong> to determine if an
+outcome is indeed significant or if it could have likely happened by random
+chance. Now armed with the tools to measure our data science models’ significance
+we can immediately apply that to our project.</p>
+
+<h2 id="project-2---linear-regression">Project 2 - Linear Regression</h2>
+<p>Codenamed “Project Luther”, after the dedicated TV detective,
+we scraped and analyzed movie data to answer an interesting question.
+Instead of providing everyone with a clean set of data to work with, we were tasked with
+formulating our own hypothesis and then individually collecting the data that we
+need for our analysis.</p>
+
+<p>This was really cool as it lets us experience what data scientists have to do to
+<strong>collect, wrangle, and clean data</strong> before it can be used effectively to create our
+models.</p>
+
+<p>Here’s a write up of my project: <a href="/2016/01/31/roger-ebertron/">The Roger-Ebertron</a>.</p>
+
+<h2 id="web-scraping-with-beautiful-soup-and-selenium">Web Scraping with Beautiful Soup and Selenium</h2>
+<p>Fortunately Metis do show us how we can gather data by scraping the web. We
+looked at Python tools such as <strong>Beautiful Soup</strong> to parse HTML and <strong>Selenium</strong> for web
+automation to make our lives much easier with a crash course in HTML and CSS and
+live demonstration of these tools.</p>
+
+<p>By the end of these 2 weeks, my web scraping skills have jumped leaps and bounds.
+But it is also extremely helpful when web designers label their HTML and CSS
+elements well.</p>
+
+<p>However, I did find the learning curve of BeautifulSoup pretty steep, with no
+easy tutorial online. So I’ll try to provide some concrete examples on my blog.</p>
+
+<h2 id="minimum-viable-product">Minimum Viable Product</h2>
+<p>Web scraping for their project did take most students a while. And after a session
+on creating a Minimum Viable Product, we were tasked on the same day to create a
+presentation for our project based on what we have gathered so far. That was a
+challenging but ultimately beneficial endeavor to help me organize what I have so
+far and if my question is actually interesting and presentable.</p>
+
+<p>Here’s a post on my MVP.</p>
+
+<h2 id="cool-stuff">Cool Stuff:</h2>
+<ul>
+  <li><strong>Guest speaker Liv Buli</strong> of Next Big Sound came to speak to us on Thursday
+1/28 on <em>“Story Telling + Data Science + Data Visualization = Data Journalism”</em>.
+It was extremely insightful and I discuss her talk and my thoughts on this
+<a href="/2016/01/28/liv-buli-next-big-sound-talks/">post</a>.</li>
+  <li><strong>Metis Open House</strong> was this Tuesday night, and I had a chance to meet some
+Metis alumni to see what they’re doing now, and to share my experiences so far
+with prospective students.</li>
+  <li><strong>Stats Worksheet</strong>: Our TA <a href="http://reshama.nyc/" target="_blank">Reshma</a> gave us some excellent resources in
+statistics and linear regression, including a worksheet where we have get to
+walk through a simple regression problem with pencil and a calculator to see
+each step of the process. We had to manually compute the regression beta
+values, find the residuals, calculate our R-squared values, and then test our
+model for significance. It was extremely helpful to understand regression.</li>
+</ul>
+
+<h2 id="concerns">Concerns:</h2>
+<ul>
+  <li>Just one area that I recommended to the Metis leaders: there’s no expectation
+of <strong>linear algebra</strong> for the course. And some students have not seen the
+summation <script type="math/tex">\Sigma</script> symbol before. When I started learning data science on my own, I find linear
+algebra to be indispensable in understanding what happens behind some machine l
+earning models. I’d recommend that a crash course in at least linear algebra
+notation to be included. And even in the pre-work before new students start
+the bootcamp.</li>
+</ul>
+
+<p>As always, I try to share my work on my <a href="https://github.com/ozzieliu/metis-datascience" target="_blank">Github repository</a>.
+You can find my <strong>pair programming work, investigation, and projects</strong>
+(when they’re made presentation ready).</p>
+
+<p>Take a look, and as always, let me know what you think!</p>
+
+      <div class="page-footer">
+        <!-- <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Week 2 and 3 at Metis&url=http://localhost:4000/2016/01/29/metis-week-2-3/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/01/29/metis-week-2-3/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/01/29/metis-week-2-3/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div> -->
+        <div class="page-tag">
+          
+            <a href="/projects/#metis" class="tag">&#35; metis</a>
+          
+            <a href="/projects/#data-science" class="tag">&#35; data-science</a>
+          
+            <a href="/projects/#machine-learning" class="tag">&#35; machine-learning</a>
+          
+        </div>
+      </div>
+      <!-- <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+ -->
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61700249-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
